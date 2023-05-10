@@ -94,9 +94,12 @@
 
 ## 6. | Blockage
 - Several improvements can be implemented in the following research/notebook as although selecting the best model for prediction but at the last section(Prediction Case) on testing one set of dummy data, there is still incorrect prediction obtained.
-    > Suggested for the next research can increase the dataset size for the model to train and then perform prediction. 
+    > Suggested for the next research can increase the dataset size for the model to train and then perform prediction.
+
     > Comparing the models trained on with or without removing some low correlation features.
+
     > Since the hyperparameters used is in wide range, based on dataset size concern, check any regularization methods need to be applied on or reducing some hyperparameters used in GridSearchCV.
-- The pickle file outputed is not correct in size. Need further troubleshooting.
+- The pickle file outputed is not correct in size. Need further troubleshooting. 
+  (SOLVED by using joblib library instead of directly using pickle library)
 
 
