@@ -62,11 +62,13 @@
 
 ## 2. | File Descriptions 👓
 - `heart.csv`: the dataset file.
-- `KingsleyNgoiKokKheng_HeartDisease_Prediction(SMOTEafterSplit_X_OutlierTrim_X_noDroppingFeature_X_FeatureImportance_GridSearchCV_LogicalParamStratifiedKFold).ipynb`: contains the code of data exploration, preparation and modeling. 
-- `heart_disease_log.pkl`: the classification model. 
+- `HeartDisease_Prediction_KingsleyNgoi.ipynb`: contains the code of data exploration, preparation and modeling. 
+- `heart_disease_ada_best_model.pkl`: the classification model. 
 
 ## 3. | Accuracy of Best Model 🧪
-- Accuracy achieved: 87.72% (Logistic Regression)
+AdaBoost Classifier
+- Train Accuracy achieved: 87.30%
+- Test Accuracy achieved: 91.23%
 
 ## 4. | Conclusion 📤
 - In this study respectively,
@@ -80,10 +82,10 @@
 - We have handled with skewness problem for make them closer to normal distribution with examing the distribution with skewness value, kurtosis value, the boxplot, histogram and qqplot.
 - We have used pipeline, stratifiedKFold and cross-checked the models obtained from train sets by applying cross validation for each model performance and hyperparameter tuning and best paramters selection.
 - We have examined the feature importance of some models.
-- Lastly we have examined the results of all models visually with respect to select the best one which is Logistic Regression for the problem in hand.
+- Lastly we have examined the results of all models visually with respect to select the best one which is AdaBoost with dropping high extraordinarily chi2 score features for the problem in hand.
 
 ## 5. | Reference 🔗
-<ul><u>Kaggle Notebook 📚</u>
+<ul><b><u>Kaggle Notebook 📚</u></b>
         <li><a style="color: #3D5A80" href="https://www.kaggle.com/code/caesarmario/listen-to-your-heart-a-disease-prediction">Listen to Your Heart: A Disease Prediction by MARIO CAESAR</a></li>
         <li><a style="color: #3D5A80" href="https://www.kaggle.com/code/azizozmen/heart-failure-predict-8-classification-techniques/notebook">Heart_Failure_Predict_8_Classification_Techniques by MATTHEW CONNOR</a></li>
 </ul>
@@ -91,15 +93,24 @@
         <li><a style="color: #3D5A80" href="https://towardsdatascience.com/5-smote-techniques-for-oversampling-your-imbalance-data-b8155bdbe2b5">5 SMOTE Techniques for Oversampling your Imbalance Data by Cornellius Yudha Wijaya</a></li>
         <li><a style="color: #3D5A80" href="https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/">Tune Hyperparameters for Classification Machine Learning Algorithms by  Jason Brownlee </a></li>
 </ul>
-
-## 6. | Blockage
-- Several improvements can be implemented in the following research/notebook as although selecting the best model for prediction but at the last section(Prediction Case) on testing one set of dummy data, there is still incorrect prediction obtained.
-    > Suggested for the next research can increase the dataset size for the model to train and then perform prediction.
-
-    > Comparing the models trained on with or without removing some low correlation features.
-
-    > Since the hyperparameters used is in wide range, based on dataset size concern, check any regularization methods need to be applied on or reducing some hyperparameters used in GridSearchCV.
-- The pickle file outputed is not correct in size. Need further troubleshooting. 
-  (SOLVED by using joblib library instead of directly using pickle library)
+<ul><b><u>Models Parameters </u></b>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">sklearn.linear_model.LogisticRegression by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">sklearn.neighbors.KNeighborsClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">sklearn.svm.SVC by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html">sklearn.naive_bayes.GaussianNB by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">sklearn.tree.DecisionTreeClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">sklearn.neighbors.KNeighborsClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">sklearn.ensemble.RandomForestClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html">sklearn.ensemble.GradientBoostingClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html">sklearn.ensemble.AdaBoostClassifier by scikit-learn developers (BSD License).</a></li>
+        <li><a style="color: #3D5A80" href="https://xgboost.readthedocs.io/en/stable/parameter.html">XGBoost Parameters by xgboost developers..</a></li>
+</ul>
+<ul><b><u>Chi2 Statistical Testing for Feature Selection </u></b>
+        <li><a style="color: #3D5A80" href="https://machinelearningmastery.com/feature-selection-with-categorical-data/">How to Perform Feature Selection with Categorical Data by Jason Brownlee.</a></li>
+        <li><a style="color: #3D5A80" href="https://towardsdatascience.com/using-the-chi-squared-test-for-feature-selection-with-implementation-b15a4dad93f1">Using the Chi-Squared test for feature selection with implementations by Dr.Saptarsi Goswami. </a></li>
+</ul>
+<ul><b><u>Notebook Styling </u></b>
+        <li><a style="color: #3D5A80" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html">Table Visualization: Styler Object and Customising the Display by NumFOCUS, Inc. Hosted by OVHcloud.</a></li>
+</ul>
 
 
