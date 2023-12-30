@@ -80,7 +80,7 @@ AdaBoost Classifier
 - We have perform SMOTE oversampling to minority target class to treat the imbalance dataset condition.
 - We have transformed categorical variables into dummies so we can use them in the models.
 - We have handled with skewness problem for make them closer to normal distribution with examing the distribution with skewness value, kurtosis value, the boxplot, histogram and qqplot.
-- We have used pipeline, stratifiedKFold and cross-checked the models obtained from train sets by applying cross validation for each model performance and hyperparameter tuning and best paramters selection.
+- We have used pipeline, stratifiedKFold and cross-checked the models obtained from train sets by applying cross validation for each model performance and hyperparameter tuning and best parameters selection.
 - We have examined the feature importance of some models.
 - Lastly we have examined the results of all models visually with respect to select the best one which is AdaBoost with dropping high extraordinarily chi2 score features for the problem in hand.
 
